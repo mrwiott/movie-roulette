@@ -1,0 +1,49 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-dim: rgba(201, 168, 76, 0.15);
+  --bg: #111111;
+  --bg2: #1a1a1a;
+  --bg3: #222222;
+  --text: #f0ece0;
+  --text-dim: #888880;
+  --radius: 10px;
+  --font: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  display: block;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }

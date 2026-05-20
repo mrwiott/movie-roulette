@@ -1,0 +1,283 @@
+.container {
+  padding: 24px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+  min-height: calc(100dvh - 60px);
+}
+
+.header {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Idle */
+.idleSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.wheelDecor {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.wheelRing {
+  width: 100%;
+  height: 100%;
+  animation: slowSpin 20s linear infinite;
+}
+
+.wheelSvg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.spinBtn {
+  width: 100%;
+  max-width: 320px;
+  padding: 18px 32px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #b8943e 0%, var(--gold) 50%, #e8c050 100%);
+  color: #111;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 24px rgba(201,168,76,0.3);
+}
+
+.spinBtn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 12px rgba(201,168,76,0.2);
+}
+
+.spinBtnDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.spinBtnText { flex: 1; }
+.spinBtnIcon { font-size: 0.75rem; }
+
+.allWatched {
+  font-size: 0.85rem;
+  color: var(--gold);
+  text-align: center;
+}
+
+/* Drum */
+.drumSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.drumWindow {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  height: 264px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid #333;
+  background: var(--bg2);
+}
+
+.drumHighlight {
+  position: absolute;
+  top: 88px;
+  left: 0;
+  right: 0;
+  height: 88px;
+  background: rgba(201,168,76,0.06);
+  border-top: 1px solid rgba(201,168,76,0.3);
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.drum {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.drumItem {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+
+.drumPoster {
+  width: 44px;
+  height: 66px;
+  object-fit: cover;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.drumTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.spinningText {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.4; }
+  to   { opacity: 1; }
+}
+
+/* Result */
+.resultSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  animation: fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.resultCard {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: var(--bg2);
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 16px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.resultPosterWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.resultPoster {
+  width: 90px;
+  height: 134px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.resultGlow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 0 16px rgba(201,168,76,0.4);
+}
+
+.resultInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.resultCategory {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.resultTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.resultYear {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.answerBtn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: transform 0.12s, opacity 0.12s;
+}
+
+.answerBtn:active {
+  transform: scale(0.97);
+  opacity: 0.85;
+}
+
+.answerYes {
+  background: var(--gold);
+  color: #111;
+}
+
+.answerWatch {
+  background: var(--bg3);
+  color: var(--text);
+  border: 1px solid #444;
+}
+
+.answerNo {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid #2a2a2a;
+}
