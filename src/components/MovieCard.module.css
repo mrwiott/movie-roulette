@@ -1,0 +1,113 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.inner {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  background: var(--bg3);
+  border: 1px solid #2a2a2a;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:active .inner,
+.card.scratching .inner {
+  border-color: var(--gold);
+  box-shadow: 0 0 12px rgba(201,168,76,0.25);
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.watched .poster {
+  filter: none;
+}
+
+.card:not(.watched) .poster {
+  filter: brightness(0.25) saturate(0);
+}
+
+.scratchOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.watched .scratchOverlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scratchIcon {
+  font-size: 1.4rem;
+  color: var(--gold-dim);
+  opacity: 0.5;
+}
+
+.scratching .scratchOverlay {
+  animation: scratchAnim 0.5s ease forwards;
+}
+
+@keyframes scratchAnim {
+  0%   { opacity: 1; }
+  40%  { opacity: 0.6; background: linear-gradient(135deg, #2a2a1a 0%, #3a3010 100%); }
+  100% { opacity: 0; }
+}
+
+.scratching .poster {
+  animation: revealPoster 0.5s ease forwards;
+}
+
+@keyframes revealPoster {
+  0%   { filter: brightness(0.25) saturate(0); transform: scale(1); }
+  50%  { filter: brightness(0.5) saturate(0.3); transform: scale(1.04); }
+  100% { filter: brightness(1) saturate(1); transform: scale(1); }
+}
+
+.watchedBadge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.7));
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.title {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.watched .title {
+  color: var(--gold);
+}

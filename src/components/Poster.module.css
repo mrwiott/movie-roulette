@@ -1,0 +1,131 @@
+.container {
+  padding: 16px 16px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Progress */
+.progress {
+  background: var(--bg2);
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progressMain {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.progressCount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.progressSep {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+}
+
+.progressTotal {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.progressLabel {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-left: 6px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.progressBar {
+  height: 3px;
+  background: #2a2a2a;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.progressSubs {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.03em;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  flex: 1;
+  padding: 9px 0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  background: var(--bg2);
+  border: 1px solid #2a2a2a;
+  transition: all 0.15s;
+}
+
+.tabActive {
+  color: var(--bg);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* Sections */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-left: 2px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

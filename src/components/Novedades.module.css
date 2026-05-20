@@ -1,0 +1,126 @@
+.container {
+  padding: 24px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.heroEyebrow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.heroTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.heroSub {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card {
+  background: var(--bg2);
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+}
+
+.tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.cardDesc {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.cardBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0.4;
+}
+
+/* Notify */
+.notify {
+  background: var(--bg2);
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  text-align: center;
+}
+
+.notifyText {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.notifyBtn {
+  width: 100%;
+  max-width: 220px;
+  padding: 13px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: background 0.15s, color 0.15s;
+}
+
+.notifyBtn:active {
+  background: var(--gold);
+  color: #111;
+}
